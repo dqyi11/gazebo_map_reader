@@ -57,8 +57,9 @@ class WorldFileReader(QtGui.QWidget):
         return float_array
     
     def dump(self, outfile):
-        
-        img = QtGui.QImage(QtCore.QSize(self.width, self.height), QtGui.QImage.Format_ARGB32_Premultiplied)
+        width = self.scale * self.worldSize[0]
+        height = self.scale * self.worldSize[1] 
+        img = QtGui.QImage(QtCore.QSize(width, height), QtGui.QImage.Format_ARGB32_Premultiplied)
         img.fill(QtCore.Qt.white)
         qp = QtGui.QPainter(img)
         qp.begin(self)

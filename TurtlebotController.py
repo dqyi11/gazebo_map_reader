@@ -23,7 +23,6 @@ class TurtlebotController(object):
     def loadPath(self, path):
         self.plannedPath = path
         
-        
     def control(self, t):
         
         if self.plannedPath == None:
